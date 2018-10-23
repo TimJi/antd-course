@@ -8,6 +8,9 @@
     "umi-plugin-react": "^1.1.1"
   },
   "dependencies": {
-    "antd": "^3.10.2"
+    "antd": "^3.10.2",
+    "babel-plugin-dva-hmr": "^0.4.1",
+    "dva-immer": "^0.2.3",
+    "dva-loading": "^2.0.5"
   }
 }
