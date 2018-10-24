@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import { Card } from 'antd'
+import { Card, Button } from 'antd'
 
 export default class PuzzleCardsPage extends Component {
   constructor(props) {
     super(props)
+    this.counter = 100
     this.state = {
       cardList: [
         {
@@ -19,6 +20,23 @@ export default class PuzzleCardsPage extends Component {
       ],
     }
   }
+
+  addNewCard = () => {
+    this.setState(prevState => {
+      const prevCardList = prevState.cardList
+      this.counter += 1
+      const card = {
+        id: this.counter,
+        setup: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
+        punchline:
+          'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      }
+      return {
+        cardList: prevCardList.concat(card),
+      }
+    })
+  }
+
   render() {
     return (
       <div>
@@ -32,6 +50,9 @@ export default class PuzzleCardsPage extends Component {
             </Card>
           )
         })}
+        <div>
+          <Button onClick={this.addNewCard}> 添加卡片 </Button>
+        </div>
       </div>
     )
   }
