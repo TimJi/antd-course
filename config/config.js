@@ -5,6 +5,7 @@ export default {
       'umi-plugin-react',
       {
         antd: true,
+        dva: true,
       },
     ],
   ],
