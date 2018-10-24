@@ -14,10 +14,8 @@ export default {
       path: '/',
       component: '../layout',
       routes: [
-        {
-          path: 'helloworld',
-          component: './HelloWorld',
-        },
+        { path: 'helloworld', component: './HelloWorld' },
+        { path: 'puzzlecards', component: './puzzlecards' },
       ],
     },
   ],
