@@ -8,6 +8,7 @@ export default {
   namespace: 'cards',
   state: {
     cardsList: [],
+    counter: 3,
   },
   effects: {
     *queryList(_, sagaEffects) {
@@ -37,6 +38,15 @@ export default {
     },
   },
   reducers: {
+    addOne(state, { payload: newCard }) {
+      const nextCounter = state.counter + 1
+      const newCardWithKey = { ...newCard, key: nextCounter.toString() }
+      const nextCardsList = state.cardsList.concat(newCardWithKey)
+      return {
+        cardsList: nextCardsList,
+        counter: nextCounter,
+      }
+    },
     initList(state, { payload }) {
       const cardsList = [...payload]
       return {
