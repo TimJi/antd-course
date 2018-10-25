@@ -23,6 +23,7 @@ export default {
           component: 'HelloWorld',
         },
         { path: 'puzzlecards', component: './puzzlecards' },
+        { path: 'list', component: './list' },
         {
           path: '/dashboard',
           routes: [
